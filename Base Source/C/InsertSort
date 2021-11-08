@@ -1,13 +1,13 @@
 #include <stdio.h>
 
-void BubbleSort(int* array, int size);
+void InsertSort(int* array, int size);
 void PrintArray(int* array, int size);
 
 int main()
 {
 	int array[10] = { 41, 23, 12, 35, 78, 65, 43, 57, 92, 84 };
 
-	BubbleSort(array, 10);
+	InsertSort(array, 10);
 	PrintArray(array, 10);
 
 	return 0;
