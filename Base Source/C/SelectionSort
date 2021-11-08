@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-#define MINVALUE 100
-
 void SelectionSort(int* array, int size);
 void PrintArray(int* array, int size);
 
@@ -17,24 +15,22 @@ int main()
 
 void SelectionSort(int* array, int size)
 {
-	int temp, i, j, index;
-
-	for (i = 0; i < size; i++)
-	{
-		int min = MINVALUE;
-		for (j = i; j < size; j++)
+		int i, j, temp;
+		for (i = 0; i < size - 1; i++)
 		{
-			if (min > array[j])
+			int min = i;
+			for (j = i + 1; j < size; j++)
 			{
-				min = array[j];
-				index = j;
+				if (array[j] < array[min])
+				{
+					min = j;
+				}
+				temp = array[i];
+				array[i] = array[min];
+				array[min] = temp;
 			}
 		}
-		temp = array[i];
-		array[i] = array[index];
-		array[index] = temp;
 	}
-}
 
 void PrintArray(int* array, int size)
 {
