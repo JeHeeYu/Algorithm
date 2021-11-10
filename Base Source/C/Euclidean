@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int Euclidean(int x, int y)
+int GCD(int x, int y)
 {
 	if (y == 0)
 		return x;
@@ -11,9 +11,15 @@ int Euclidean(int x, int y)
 
 }
 
+int LCM(int x, int y)
+{
+	return a * b / GCD(a, b);
+}
+
 int main()
 {
 	int x, y;
 	scanf("%d %d", &x, &y);
-	printf("%d", Euclidean(x, y));
+	printf("%d\n", GCD(x, y));
+	printf("%d\n", LCM(x, y));
 }
