@@ -6,7 +6,7 @@ int GCD(int x, int y)
 		return x;
 	else
 	{
-		return Euclidean(y, x % y);
+		return GCD(y, x % y);
 	}
 
 }
