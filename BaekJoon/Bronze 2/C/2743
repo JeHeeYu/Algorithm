@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <stdio.h>
+
+int main()
+{
+	char arr[101];
+	scanf("%s", arr);
+
+	int len = strlen(arr);
+
+	printf("%d", len);
+	return 0;
+}
