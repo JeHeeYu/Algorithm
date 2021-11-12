@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+char* solution(int num) {
+    char* answer = (char*)malloc(sizeof(char) * 5);
+    char a[4] = "Odd";
+    char b[5] = "Even";
+    
+    if(num % 2 == 0)
+        strcpy(answer, b);
+    
+    else
+       strcpy(answer, a);
+    
+    
+    return answer;
+}
