@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+char* solution(int n) {
+    
+	char* answer = (char*)malloc(sizeof(char) * (3*n +1));
+	
+    char *su = "수";
+    char *bak = "박";
+    
+    strcpy(answer, "\0");
+    
+	for (int i = 0; i < n; i++)
+	{
+		if (i % 2 == 0) {
+			strcat(answer, su);
+		}
+		else
+		{
+			strcat(answer, bak);
+		}
+	}
+	return answer;
+}
