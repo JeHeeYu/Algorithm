@@ -22,3 +22,4 @@ int main()
 		printf("%d", arr[K - 1]);
 	return 0;
 }
+ 
