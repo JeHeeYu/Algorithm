@@ -7,3 +7,4 @@ int main()
 	
 	printf("%d %d", K/M, K%M);
 }
+ 
