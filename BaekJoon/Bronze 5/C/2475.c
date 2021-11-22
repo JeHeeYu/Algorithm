@@ -8,7 +8,7 @@ int main()
 	{
 		scanf("%d", &arr[i]);
 		sum += arr[i] * arr[i];
-	}
+	} 
 
 	result = sum % 10;
 	
