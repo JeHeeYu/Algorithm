@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+bool solution(int x) {
+    bool answer = false;
+
+    int result = 0;
+    int n = x;
+    while(n > 0)
+    {
+        result += n % 10;
+        n /= 10;
+    }
+    
+    if(x % result == 0)
+        answer = true;
+    
+    return answer;
+}
