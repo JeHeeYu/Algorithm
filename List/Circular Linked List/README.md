@@ -61,6 +61,7 @@ void CDLL_AppendNode(Node** head, Node* newNode)
 </pre>
 
 ### 노드 삭제 연산
+<pre>
 void CDLL_RemoveNode(Node** head, Node* removeNode)
 {
     if(*head == removeNode) {
@@ -80,3 +81,4 @@ void CDLL_RemoveNode(Node** head, Node* removeNode)
         removeNode->nextNode = NULL;
     }
 }
+</pre>
