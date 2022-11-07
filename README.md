@@ -6,6 +6,7 @@
 <ul>
   <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/List/Single%20Linked%20List" target="_blank">링크드 리스트(Linked List)</li>
   <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/List/Double%20Linked%20List" target="_blank">더블 링크드 리스트(Double Linked List)</li>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/List/Circular%20Linked%20List" target="_blank">환형 더블 링크드 리스트(Double Linked List)</li>
 </ul>
 
 ## 문제 풀이
