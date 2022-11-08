@@ -44,3 +44,38 @@
   <li>35를 디큐하고, 프론트 요소의 값 35를 빼고 프론트 값을 1 증가시킨다.</li>
 </ol>
 <img src="https://user-images.githubusercontent.com/87363461/200546292-3eda8170-1256-44c2-af1d-fbef666b240e.JPG" width="500" height="700">
+
+## 큐의 구조체
+일반 배열로 구성한 큐의 경우 3가지의 정보만 있으면 되지만, 링 버퍼 큐에서는 5가지의 필수 정보가 필요하다.
+<ul>
+<li>큐 최대 용량</li>
+<li>큐 현재 요소 개수</li>
+<li>프론트</li>
+<li>리어</li>
+<li>큐의 맨 앞 요소에 대한 위치</li>
+</ul>
+<pre>
+typedef struct {
+    int max;        // 큐의 최대 용량
+    int num;        // 현재 요소 개수
+    int front;      // 프론트, 데이터를 꺼내는 방향
+    int rear;       // 리어, 데이터를 넣는 방향
+    int *que;       // 큐의 맨 앞 요소에 대한 위치
+} Queue;
+</pre>
+
+## 큐에서 사용하는 함수
+<pre>
+int Create(Queue *q, int max);          // 큐 메모리 생성
+int Enque(Queue *q, int x);             // 큐에 데이터 인큐
+int Deque(Queue *q, int *x);            // 큐에서 데이터 디큐
+int Peek(const Queue *q, int *x);       // 맨 앞 데이터 확인
+void Clear(Queue *q);                   // 모든 데이터 삭제
+int Capacity(const Queue *q);           // 큐 최대 용량 확인
+int Size(const Queue *q);               // 큐에 저장된 데이터 개수
+int IsEmpty(const Queue *q);            // 큐가 비어 있는지 확인
+int IsFull(const Queue *q);             // 큐가 가득 찼는지 확인
+int Search(const Queue *q, int x);      // 큐에서 데이터 검색
+void Print(const Queue *q);             // 큐 데이터 출력
+void Terminate(Queue *q);               // 큐 메모리 소멸
+</pre>
