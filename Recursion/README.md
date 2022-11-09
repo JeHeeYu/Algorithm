@@ -22,5 +22,47 @@
 <br>
 팩토리얼 예제는 재귀함수의 예제로 많이 사용한다.
 <pre>
+#include <stdio.h>
 
+int Factorial(int n);
+
+int main()
+{
+    int n;
+    printf("정수를 입력하세요 : ");
+    scanf("%d", &n);
+    
+    printf("%d의 Factorial 값은 %d 입니다.\n", n, Factorial(n));
+    
+    return 0;
+}
+
+int Factorial(int n)
+{
+    if(n > 0) {
+        return n * Factorial(n - 1);
+    }
+    else {
+        // 마지막 호출일 때
+        return 1;
+    }
+}
 </pre>
+팩토리얼의 표기식은 숫자 뒤에 !를 붙여 표시한다.
+<br>
+예를 들어, 10의 팩토리얼인 10!은 10 * 9!로 구할 수 있고, 표시할 수 있다.
+
+## 3을 매개변수로 받은 팩토리얼 함수 호출 과정
+A : Factorial(3)을 실행하면 3 * Factorial(2)를 반환하는데, 이 값을 구하기 위해 다시 2를 매개변수로 주고 Factorial 함수를 호출한다.
+<br>
+<br>
+B : 호출된 함수는 매개변수 n에 2를 전달받고, 다시 2 * Factorial(1)을 수행하기 위해 Factorial 함수를 호출한다.
+<br>
+<br>
+C : 다시 호출된 Factorial 함수는 매개변수 n에 1을 전달받고, 1 * Factorial(0)을 수행하기 위해 Factorial 함수를 호출한다.
+<br>
+<br>
+D : 마지막으로 호출된 Factorial 함수는 매개변수 n에 전달받은 값이 0이므로 1을 반환한다.
+<br>
+<br>
+마지막 함수 호출 후, 다시 C - B - A 순서로 역순으로 실행된다.
