@@ -42,4 +42,6 @@
 선택 정렬은 서로 떨어져 있는 요소를 교환하는 것이기 때문에 안정적이지 않다.
 <br>
 만약 중복되는 값이 있을 경우 요소의 위치가 뒤바뀌기 때문이다.
+<br>
+<br>
 <img src="https://user-images.githubusercontent.com/87363461/201461769-9971565b-e5f4-4592-81bd-fd65a6f24a56.JPG" width="300" height="300">
