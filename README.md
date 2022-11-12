@@ -11,7 +11,12 @@
 
 ### [스택](https://github.com/JeHeeYu/Algorithm/tree/main/Stack)
 ### [큐](https://github.com/JeHeeYu/Algorithm/tree/main/Queue)
+### [재귀함수](https://github.com/JeHeeYu/Algorithm/tree/main/Recursion)
 
+<ul>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/blob/main/Recursion/Factorial.c" target="_blank">팩토리얼(Linked List)</li>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/blob/main/Recursion/Greatest_Common_Divisor.c" target="_blank">최대 공약수 구하기(Double Linked List)</li>
+</ul>
 ## 문제 풀이
 <ul>
   <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Programmers" target="_blank">프로그래머스</li>
