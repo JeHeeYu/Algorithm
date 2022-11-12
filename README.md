@@ -10,13 +10,21 @@
 </ul>
 
 ### [스택](https://github.com/JeHeeYu/Algorithm/tree/main/Stack)
-### [큐](https://github.com/JeHeeYu/Algorithm/tree/main/Queue)
-### [재귀함수](https://github.com/JeHeeYu/Algorithm/tree/main/Recursion)
 
+### [큐](https://github.com/JeHeeYu/Algorithm/tree/main/Queue)
+
+### [재귀함수](https://github.com/JeHeeYu/Algorithm/tree/main/Recursion)
 <ul>
   <li><a href="https://github.com/JeHeeYu/Algorithm/blob/main/Recursion/Factorial.c" target="_blank">팩토리얼(Linked List)</li>
   <li><a href="https://github.com/JeHeeYu/Algorithm/blob/main/Recursion/Greatest_Common_Divisor.c" target="_blank">최대 공약수 구하기(Double Linked List)</li>
     <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Recursion/Towers%20Of%20Hanoi" target="_blank">하노이의 탑(Towers Of Hanoi)</li>
+</ul>
+
+### [정렬](https://github.com/JeHeeYu/Algorithm/tree/main/Sort)
+<ul>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Sort/Bubble%20Sort" target="_blank">버블 정렬(Bubble Sort)</li>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Sort/Selection%20Sort" target="_blank">선택 정렬(Selection Sort)</li>
+    <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Sort/Insertion%20Sort" target="_blank">삽입 정렬(Insertion Sort)</li>
 </ul>
 
 
