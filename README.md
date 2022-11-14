@@ -27,6 +27,12 @@
     <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Sort/Insertion%20Sort" target="_blank">삽입 정렬(Insertion Sort)</li>
 </ul>
 
+### [검색](https://github.com/JeHeeYu/Algorithm/tree/main/Search)
+<ul>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Search/Linear%20Search" target="_blank">선형 검색(Bubble Sort)</li>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Search/Binary%20Search" target="_blank">이진 검색(Selection Sort)</li>
+</ul>
+
 
 ## 문제 풀이
 <ul>
