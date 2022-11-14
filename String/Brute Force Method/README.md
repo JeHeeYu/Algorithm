@@ -1,0 +1,36 @@
+## 브루트-포스법(Brute force) 알고리즘
+브루트 포스 알고리즘이란 완전탐색 알고리즘으로 문제에 나와있는 모든 경우의 수를 시험하는 방법이다.
+<br>
+문자열을 검색하는 가장 기초적인 알고리즘으로 꼽히며 찾고 싶은 문자열이 있을 때 하나하나 대조하며 찾아낸다.
+<br>
+<br>
+브루트 포스 알고리즘은 구조가 간단하여 구현 및 이해가 쉽지만 비효율적 알고리즘이다.
+<br>
+<br>
+아래 예제는 문자열 "ABABCDEFGHA"에서 패턴 "ABC"를 브루트 포스 알고리즘을 이용하여 검색하는 예제이다.
+<br>
+<br>
+먼저 텍스트의 첫 문자 'A'부터 시작하는 3개의 문자와 "ABC"가 일치하는지 검사한다.
+<br>
+'A'와 'B'는 일치하지만, 'C'가 일치하지 않는다.
+<br>
+<br>
+<img src="https://user-images.githubusercontent.com/87363461/201604672-cd3b2c13-9af6-4499-8b74-3b2071a25dce.JPG" width="300" height="150">
+<br>
+<br>
+패턴을 1칸 뒤로 옮기고, STRING의 2번째 문자부터 3개의 문자가 일치하는지 검사한다.
+<br>
+'A'와 'B'가 다르다.
+<br>
+<br>
+<img src="https://user-images.githubusercontent.com/87363461/201604958-9ab98b1a-8662-4f2b-98cc-5c7012bb2002.JPG" width="300" height="150">
+<br>
+<br>
+패턴을 다시 1칸 뒤로 옮기고, STRING의 3번째 문자부터 3개의 문자가 일치하는지 검사한다.
+<br>
+모두 일치하므로, 문자열 검색에 성공한다.
+<br>
+<br>
+<img src="https://user-images.githubusercontent.com/87363461/201605838-5adb11cf-3f8f-4747-b9a0-76959dfd03c6.JPG" width="300" height="150">
+<br>
+<br>
