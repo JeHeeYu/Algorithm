@@ -25,6 +25,7 @@
   <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Sort/Bubble%20Sort" target="_blank">버블 정렬(Bubble Sort)</li>
   <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Sort/Selection%20Sort" target="_blank">선택 정렬(Selection Sort)</li>
     <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Sort/Insertion%20Sort" target="_blank">삽입 정렬(Insertion Sort)</li>
+    <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Sort/Quick%20Sort" target="_blank">퀵 정렬(Insertion Sort)</li>
 </ul>
 
 ### [검색](https://github.com/JeHeeYu/Algorithm/tree/main/Search)
