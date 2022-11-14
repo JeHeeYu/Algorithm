@@ -48,4 +48,9 @@
 어떤 배열을 검색하기 전에 검색하고자 하는 키 값을 배열의 맨 끝 요소에 저장한다. (이것이 보초)
 <br>
 <br>
-<img src="https://user-images.githubusercontent.com/87363461/201570018-449ad896-9d0a-4cad-972d-111b6b508947.JPG" width="200" height="70">
+<img src="https://user-images.githubusercontent.com/87363461/201570018-449ad896-9d0a-4cad-972d-111b6b508947.JPG" width="350" height="100">
+<br>
+<br>
+보초법을 적용하면 원하는 값이 배열에 존재하지 않아도 보초까지 검색하면 종료 조건이 달성되어 종료한다.
+<br>
+보초는 반복문에서 종료 판단 횟수를 2회에서 1회로 줄이는 역할을 한다.
