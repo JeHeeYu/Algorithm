@@ -7,3 +7,45 @@
 다른 말로 순차 검색(Sequential Search)라고도 한다.
 <br>
 <br>
+검색하고자 하는 데이터 집합이 있다고 가정한다.
+<br>
+<br>
+<img src="https://user-images.githubusercontent.com/87363461/201568646-b8ac0e63-2dbd-4d6b-993e-ee26a4a7ed01.JPG" width="350" height="70">
+<br>
+<br>
+이 배열에서 2라는 값을 찾기 위해 0번 인덱스 요소부터 차례로 검색한다.
+<br>
+<br>
+<img src="https://user-images.githubusercontent.com/87363461/201568798-ac966ab3-be66-4073-8520-a1d8fa228b7c.JPG" width="400" height="300">
+<br>
+위 배열에서는 2라는 값을 찾기 위해 4번의 검색으로 발견하였다.
+<ol>
+  <li>첫 번째 인덱스 값 6 확인, 원하는 값이 아님</li>
+  <li>두 번째 인덱스 값 4 확인, 원하는 값이 아님</li>
+  <li>세 번째 인덱스 값 3 확인, 원하는 값이 아님</li>
+  <li>네 번째 인덱스 값 2 확인, 원하는 값 확인</li>
+</ol>
+하지만, 찾고자 하는 값이 배열에 존재하지 않을 경우, 모든 배열을 검색하여야 한다.
+<br>
+<br>
+<img src="https://user-images.githubusercontent.com/87363461/201569336-5c3a1c73-333a-44e9-b303-8a42447fc6bf.JPG" width="500" height="500">
+<br>
+즉, 선형 검색의 종료 조건은 2가지로 정리할 수 있다.
+<ul>
+  <li>검색할 값을 발견하지 못하고 배열의 끝까지 확인한 경우</li>
+  <li>검색할 값을 발견한 경우</li>
+</ul>
+이렇게 발견하지 못했을 경우 모든 배열을 확인해야 해서 많은 비용이 드는 것을 볼 수 있다.
+<br>
+이러한 비용을 반으로 줄일 수 있는 방법이 있는데, 그 방법을 보초법 이라고 한다.
+
+## 보초법(Sentinel Method)
+보초법이란 반복의 종료를 알리는 특정한 값인 보초(Sentinel) 값을 사용하여 종료 조건 중 검색 실패 조건을 제거하여 
+<br>
+판단(비용) 횟수를 줄이는 방법을 말한다.
+<br>
+<br>
+어떤 배열을 검색하기 전에 검색하고자 하는 키 값을 배열의 맨 끝 요소에 저장한다. (이것이 보초)
+<br>
+<br>
+<img src="https://user-images.githubusercontent.com/87363461/201570018-449ad896-9d0a-4cad-972d-111b6b508947.JPG" width="200" height="70">
