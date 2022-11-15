@@ -34,6 +34,12 @@
   <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Search/Binary%20Search" target="_blank">이진 검색(Selection Sort)</li>
 </ul>
 
+### [문자열](https://github.com/JeHeeYu/Algorithm/tree/main/String)
+<ul>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/String/Brute%20Force%20Method" target="_blank">브루트 포스(Brute Force Method)</li>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/String/KMP" target="_blank">KMP(Knuth-Morris-Pratt Algorithm)</li>
+</ul>
+
 
 ## 문제 풀이
 <ul>
