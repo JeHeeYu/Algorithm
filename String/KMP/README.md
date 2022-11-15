@@ -52,4 +52,34 @@ KMP법은 여기서 초록색 문자"AB"와 패턴의 "AB"가 일치한다는 �
 <br>
 아래 그림을 보면 초록색 부분이 겹치지 않으므로, 패턴을 옮긴 다음 앞쪽의 첫 번째 문자부터 검사를 다시 시작해야 한다.
 <br>
-따라
+따라서 표에서 2번째 문자(B)의 값을 0으로 한다. 이 값이 0인 이유는 아래에 위시킨 패턴의 첫 번째 문자의 인덱스가 0이고,
+<br>
+이 위치에서 다시 검색을 시작하기 때문이다.
+<br>
+<br>
+<img src="https://user-images.githubusercontent.com/87363461/201934636-8cc811ee-a377-4d74-9a60-9563d6db1784.JPG" width="500" height="100">
+<br>
+<br>
+이후 다시 패턴을 1칸 뒤로 옮긴다. 다시 문자가 일치하지 않으므로 표에서 3번째 문자(C)의 값을 0으로 한다.
+<br>
+<br>
+<img src="https://user-images.githubusercontent.com/87363461/201934979-81680a54-928b-457e-a7eb-c2e2dcc8c200.JPG" width="500" height="100">
+<br>
+<br>
+다시 패턴을 뒤로 옮기면 "AB"가 일치한다. 따라서 두 표에서 두 문자의 값을 1, 2로 지정할 수 있다.
+<br>
+<br>
+<img src="https://user-images.githubusercontent.com/87363461/201937545-b36d3bca-a065-4909-b82b-5d02de5a8109.JPG" width="500" height="100">
+<br>
+<br>
+이제 마지막으로 아래에 위치한 패턴을 2칸 뒤로 옮기면 일치하지 않으므로 D는 0값으로 지정한다.
+<br>
+<br>
+<img src="https://user-images.githubusercontent.com/87363461/201938180-4699bdc1-365b-4864-9f17-2944b8e3744f.JPG" width="500" height="100">
+<br>
+<br>
+이 과정에서 두 가지의 사실을 알 수 있다.
+<ol>
+<li>패턴의 4번째 문자 'A'까지 일치한다면 아래에 위치한 패턴을 1칸 옮긴 다음 'A'를 건너뛰고 2번째 문자부터 검사할 수 있다.</li>
+<li></li>
+</ol>
