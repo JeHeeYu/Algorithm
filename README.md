@@ -37,9 +37,9 @@
 ### [문자열](https://github.com/JeHeeYu/Algorithm/tree/main/String)
 <ul>
   <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/String/Brute%20Force%20Method" target="_blank">브루트 포스(Brute Force Method)</li>
-  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/String/KMP" target="_blank">KMP(Knuth-Morris-Pratt Algorithm)</li>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Sting/KMP" target="_blank">KMP(Knuth-Morris-Pratt Algorithm)</li>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/String/Boyer-Moore" target="_blank">Boyer-Moore</li>
 </ul>
-
 
 ## 문제 풀이
 <ul>
