@@ -17,7 +17,7 @@ int main()
 }
 
 int ToDecimal(int number)
-{
+{ 
     int result = 0, n = 1;
     
     while(number > 0) {
