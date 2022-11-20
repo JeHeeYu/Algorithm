@@ -13,7 +13,7 @@ int main()
     
     cout << n << " 이하 소수" << endl;
     
-    for(int i = 2; i < n; i++) {
+    for(int i = 2; i <= n; i++) {
         if(PrimeNumber(i) == true) {
             cout << i << endl;
         }
