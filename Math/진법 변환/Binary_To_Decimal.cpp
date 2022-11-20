@@ -11,7 +11,7 @@ int main()
     cout << "변환할 숫자 입력 : ";
     cin >> n;
     
-    cout << "10진수" << n << "에서 2진수 " << ToDecimal(n) << "변환" << endl;
+    cout << "2진수" << n << "에서 10진수 " << ToDecimal(n) << "변환" << endl;
 
     return 0;
 }
