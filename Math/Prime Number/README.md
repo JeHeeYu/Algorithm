@@ -7,6 +7,8 @@
 <img src="https://user-images.githubusercontent.com/87363461/202880829-883eb9ba-6b00-4994-b41c-052fe72b6233.JPG" width="550" height="450">
 <br>
 <br>
+총 3가지의 방법으로, 일반 반복문, 제곱근, 에라토스테네스의 체를 이용한 방법을 설명한다.
+
 
 ## 1. 모든 경우의 수를 전부 나누는 방법 O(n)
 이 경우는 판단하는 수를 2부터 그 수까지 모두 나누는 방법이다.
@@ -57,7 +59,7 @@ bool PrimeNumber(int number)
 }
 </pre>
 
-## 3. 에라토스테네스의 체(Sieve of Eratosthenes)
+## 3. 에라토스테네스의 체(Sieve of Eratosthenes) O(n log(logn))
 고대 그리스의 수학자 에라토스테네스가 만들어낸 소수 찾는 방법으로, 소수 알고리즘 중 가장 효율적인 알고리즘이다.
 <br>
 이 방법은 마치 조리기구 체로 치듯이 수를 걸러낸다고 하여 에라토스테네스의 체 라고 부른다.
