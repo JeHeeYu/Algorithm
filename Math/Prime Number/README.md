@@ -40,7 +40,6 @@ bool PrimeNumber(int number)
 <br>
 sqrt 함수는 <cmath>에 존재하므로 #include <cmath>를 해주어야 한다.
 <pre>
-</pre>
 #include <cmath>
 
 bool PrimeNumber(int number)
@@ -56,3 +55,75 @@ bool PrimeNumber(int number)
     // 나누어 떨어지는 값이 없으면 소수로 판단
     return true;
 }
+</pre>
+
+## 3. 에라토스테네스의 체(Sieve of Eratosthenes)
+고대 그리스의 수학자 에라토스테네스가 만들어낸 소수 찾는 방법으로, 소수 알고리즘 중 가장 효율적인 알고리즘이다.
+<br>
+이 방법은 마치 조리기구 체로 치듯이 수를 걸러낸다고 하여 에라토스테네스의 체 라고 부른다.
+
+### 계산 방법
+먼저 1부터 100까지의 수를 나열한다.
+<br>
+<br>
+<img src="https://user-images.githubusercontent.com/87363461/202881436-574aac8a-6e2a-4eb1-ab3e-5516c87b5a88.JPG" width="400" height="400">
+<br>
+<br>
+그 후 소수도 아닌 합성수도 아닌 1을 제거한다.
+<br>
+<br>
+<img src="https://user-images.githubusercontent.com/87363461/202881456-7b7b9ae7-56c7-4115-94a4-b910a6a5f67c.JPG" width="400" height="400">
+<br>
+<br>
+다시 2를 제외한 2의 배수를 모두 제거한다.
+<br>
+<br>
+<img src="https://user-images.githubusercontent.com/87363461/202881477-a5b83664-634d-4558-9637-b52cc5a823f2.JPG" width="400" height="400">
+<br>
+<br>
+다시 3을 제외한 3의 배수를 모두 제거한다.
+<br>
+<br>
+<img src="https://user-images.githubusercontent.com/87363461/202881494-99712062-e672-4395-83c1-f6c971687a0b.JPG" width="400" height="400">
+<br>
+<br>
+다시 5를 제외한 5의 배수를 모두 제거한다.
+<br>
+<br>
+<img src="https://user-images.githubusercontent.com/87363461/202881529-2d5dae88-3b78-4269-94ab-b67c96c3306c.JPG" width="400" height="400">
+<br>
+<br>
+다시 7을 제외한 7의 배수를 모두 제거한다.
+<br>
+<br>
+<img src="https://user-images.githubusercontent.com/87363461/202881538-eb97bda7-949e-4d35-99b1-76fa478f8a12.JPG" width="400" height="400">
+<br>
+<br>
+이렇게 제거하면, 4, 8, 9 등등 2나 3의 배수였던 수들이 모두 제거되므로 소수만 판별할 수 있게 된다.
+<br>
+다만 이 방법은 '특정 범위 내의 소수'를 판정하는 데에만 효율이 좋으므로 범위가 존재하지 않을 경우 다른 알고리즘이 더 효율적일 수 있다.
+<pre>
+bool PrimeNumber(int number)
+{
+    // n이하(포함) 이므로 + 1 까지 동적 할당
+    bool *isPrime = new bool[number + 1];
+    
+    // 먼저 모든 값을 true로 초기화
+    for(int i = 0; i < number; i++) {
+        isPrime[i] = true;
+    }
+    
+    for(int i = 2; i < number; i++) {
+        // 소수일 경우 해당 수를 제외한 배수들을 모두 제외
+        if(isPrime[i] == true) {
+            // 소수 출력
+            cout << i << endl;
+            
+            // 소수 일 경우 *2 씩 하여 모든  값을 false로 할당
+            for(int j = i * 2; j <= number; j += i) {
+                isPrime[j] = false;
+            }
+        }
+    }
+}
+</pre>
