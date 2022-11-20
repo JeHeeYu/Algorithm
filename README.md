@@ -2,6 +2,11 @@
 
 ## 이론 정리
 
+### [수학](https://github.com/JeHeeYu/Algorithm/tree/main/Math)
+<ul>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Math/%EC%A7%84%EB%B2%95%20%EB%B3%80%ED%99%98" target="_blank">진법 변환</li>
+</ul>
+
 ### [리스트](https://github.com/JeHeeYu/Algorithm/tree/main/List)
 <ul>
   <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/List/Single%20Linked%20List" target="_blank">링크드 리스트(Linked List)</li>
