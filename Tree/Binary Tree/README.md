@@ -174,4 +174,9 @@
 
 ![image](https://user-images.githubusercontent.com/87363461/205426023-f011e289-71ca-4680-bcde-3b48883da328.png)  
 
+<br>
 
+## 이진 탐색 트리의 문제점
+이진 탐색 트리는 정렬되어 있는 데이터 구조에서는 탐색 속도도 빠르고 잘 처리할 수 있지만, 기형적인 데이터 구조에서는 효율이 많이 떨어진다.  
+
+![image](https://user-images.githubusercontent.com/87363461/205429636-9455c164-a8ff-4249-914a-881c5d9e062d.png)
