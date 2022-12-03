@@ -19,6 +19,11 @@
 
 ### [큐](https://github.com/JeHeeYu/Algorithm/tree/main/Queue)
 
+### [트리](https://github.com/JeHeeYu/Algorithm/tree/main/Tree)
+<ul>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Tree/Binary%20Tree" target="_blank">이진 탐색 트리(Binary Search Tree)</li>
+</ul>
+
 ### [재귀함수](https://github.com/JeHeeYu/Algorithm/tree/main/Recursion)
 <ul>
   <li><a href="https://github.com/JeHeeYu/Algorithm/blob/main/Recursion/Factorial.c" target="_blank">팩토리얼(Linked List)</li>
