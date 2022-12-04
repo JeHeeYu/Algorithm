@@ -269,7 +269,7 @@ void DestroyNode(Node* node)
 <br>
 들여쓰기 표현법으로 표현 시 계층 구조를 한 눈에 볼 수 있어 직관성이 좋다.
 ```
-void PrintTree(Node* node, int Depth)
+void PrintTree(Node* node, int depth)
 {
     // 공백 3칸을 사용하여 들여쓰기
     int i = 0;
