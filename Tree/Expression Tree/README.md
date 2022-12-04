@@ -391,3 +391,18 @@ double Evaluate(Node* tree)
     return result;
 }
 ```
+
+### [예제 코드](https://github.com/JeHeeYu/Algorithm/blob/main/Tree/Expression%20Tree/ExpressionTree.c)
+
+### 실행 결과
+```
+Preorder Tree
+ / + 7 1 - 5 2
+
+Inorder Tree
+(((7)+(1))/((5)-(2)))
+
+Postorder Tree
+ 7 1 + 5 2 - /
+Result : 2.666667 
+```
