@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+ 
 typedef struct _Node
 {
     struct _Node* child;
