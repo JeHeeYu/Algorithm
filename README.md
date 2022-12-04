@@ -21,7 +21,9 @@
 
 ### [트리](https://github.com/JeHeeYu/Algorithm/tree/main/Tree)
 <ul>
-  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Tree/Binary%20Tree" target="_blank">이진 탐색 트리(Binary Search Tree)</li>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Tree/Binary%20Tree" target="_blank">이진 트리(Binary Tree)</li>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Tree/Expression%20Tree" target="_blank">수식 트리(Expression Tree)</li>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Tree/Binary%20Search%20Tree" target="_blank">이진 탐색 트리(Binary Search Tree)</li>
 </ul>
 
 ### [재귀함수](https://github.com/JeHeeYu/Algorithm/tree/main/Recursion)
