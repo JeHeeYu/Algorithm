@@ -317,6 +317,12 @@ void PrintTree(Node* node, int depth)
 ```
 
 ### [에제 코드](https://github.com/JeHeeYu/Algorithm/blob/main/Tree/Tree.c)
+이 예제 코드는 아래 그림과 같은 트리 구조를 가지고 있다.
+
+<br>
+
+![image](https://user-images.githubusercontent.com/87363461/205476326-d7e018ff-93ca-408d-9eb3-f1ea897d9dbf.png)
+
 
 ### 실행 결과
 ```
