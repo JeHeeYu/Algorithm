@@ -326,6 +326,20 @@ void PostorderPrintTree(Node* node)
 <br>
 <br>
 따라서 잎 노드부터 뿌리 노드로 방문하는 후위 순회를 이용하면 문제 없이 소멸시킬 수 있다.
+```
+void DestroyTree(Node* node)
+{
+    // 빈 노드일 경우
+    if(node == NULL) {
+        return;
+    }
+    
+    DestroyTree(node->left);
+    DestroyTree(node->right);
+    DestroyNode(node);
+}
+```
+
 <br>
 
 ![image](https://user-images.githubusercontent.com/87363461/205478357-95dac247-046a-4d34-9a78-e22e2f67170e.png)
