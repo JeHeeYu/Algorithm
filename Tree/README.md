@@ -261,7 +261,26 @@ void DestroyNode(Node* node)
 
 이 내용을 코드로 구현하면 아래와 같다.
 ```
-수정 중
+void AddChildNode(Node* parent, Node* child)
+{
+    // 자식이 하나도 없으므로 바로 연결
+    if(parent->child == NULL) {
+        parent->child = child;
+    }
+    
+    // 자식이 있는 경우
+    else {
+        // 기존 있던 자식 노드
+        Node* tempNode = parent->child;
+        
+        // 가장 오른쪽에 있는 자식 노드를 찾을 때까지 반복
+        while(tempNode->sibling != NULL) {
+            tempNode = tempNode->sibling;
+        }
+        
+        tempNode->sibling = child;
+    }
+}
 ```
 
 ## 트리 출력
