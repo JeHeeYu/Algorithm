@@ -296,3 +296,20 @@ void PrintTree(Node* node, int depth)
     }
 }
 ```
+
+### [에제 코드](https://github.com/JeHeeYu/Algorithm/blob/main/Tree/Tree.c)
+
+### 실행 결과
+```
+A
++--B
+   +--C
+   +--D
+      +--E
+      +--F
++--G
+   +--H
++--I
+   +--J
+      +--K
+```
