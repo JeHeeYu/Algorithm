@@ -324,3 +324,24 @@ void PostorderPrintTree(Node* node)
 
 <br>
 
+### [예제 코드](https://github.com/JeHeeYu/Algorithm/blob/main/Tree/Binary%20Tree/BinaryTree.c)
+
+이 예제 코드에서는 아래 그림과 같은 트리의 구조를 갖고 있다.
+
+<br>
+
+![image](https://user-images.githubusercontent.com/87363461/205478510-c81f7f2a-92f8-4150-bfa9-a81368b54a35.png)
+
+<br>
+
+### 실행 결과
+```
+Preorder Tree
+ A B C D E F G
+
+Inorder Tree
+ C B D A F E G
+
+Postorder Tree
+C D B F G E A
+```
