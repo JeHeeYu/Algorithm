@@ -3,6 +3,7 @@
 
 using namespace std;
 
+
 int main()
 {
     cin.tie(NULL);
@@ -19,9 +20,9 @@ int main()
     }
     
     while(q.size() > 1) {
-        q.pop();
-        q.push(q.front());
-        q.pop();
+        q.pop();        // 처음 카드 버림 
+        q.push(q.front());  // 맨 앞의 카드 값을 뒤로 보냄
+        q.pop();  // 다시 카드 버림
     }
     
     cout << q.front();
