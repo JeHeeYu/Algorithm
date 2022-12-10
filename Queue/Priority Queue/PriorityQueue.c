@@ -46,7 +46,6 @@ int main()
     Enqueue(pq, nodes[3]);
     Enqueue(pq, nodes[4]);
     Enqueue(pq, nodes[5]);
-    Enqueue(pq, nodes[6]);
     
     printf("큐에 남아 있는 작업의 수 : %d\n", pq->usedSize);
 
