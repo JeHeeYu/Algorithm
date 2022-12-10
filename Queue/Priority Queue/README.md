@@ -146,7 +146,9 @@
 예를 들어, 아래와 같은 구조에서 뿌리 노드를 삭제하고, 힙 순서 속성을 유지하는 과정이다.
 
 <br>
-![image](https://user-images.githubusercontent.com/87363461/206835121-b8cc4d48-0959-4221-9e56-f18596202717.png)
+
+![image](https://user-images.githubusercontent.com/87363461/206838834-82921f32-245e-453c-8f16-46c59ee203ac.png)
+
 
 <br>
 
@@ -163,7 +165,9 @@
 <br>
 먼저 힙에서 최솟값 노드(뿌리)를 삭제한다.
 <br>
-![image](https://user-images.githubusercontent.com/87363461/206835351-bc96b5da-1053-45b9-b0b2-b2b91f0a1574.png)
+
+![image](https://user-images.githubusercontent.com/87363461/206838897-5c295074-4291-4b20-8620-1d95a26004de.png)
+
 
 <br>
 힙의 최고깊이 가장 우측 노드를 삭제된 뿌리 노드가 있던 곳으로 옮긴다.
@@ -176,7 +180,8 @@
 그래서 뿌리 노드는 양쪽 자식 중 작은 값을 가진 노드와 교환한다. (왼쪽 자식 노드 <-> 뿌리 노드)
 <br>
 
-![image](https://user-images.githubusercontent.com/87363461/206835397-db1688c2-48aa-4158-9ce1-46d260ea039c.png)
+![image](https://user-images.githubusercontent.com/87363461/206838935-e7a4a014-2012-4eb2-b521-6e356fb49c6c.png)
+
 
 <br>
 
@@ -188,7 +193,8 @@
 37이 양쪽 자식(13, 8) 보다 크므로 더 작은 값인 오른쪽 자식 노드(8)와 서로 노드를 교환한다.
 <br>
 
-![image](https://user-images.githubusercontent.com/87363461/206835435-98ccf8ae-253f-4afa-b763-6926e8022a92.png)
+![image](https://user-images.githubusercontent.com/87363461/206838972-926d1cf1-e334-4615-8d11-a3cb5bde6bac.png)
+
 
 <br>
 
@@ -197,6 +203,10 @@
 37 노드의 자식 노드의 값을 확인 하였더니 88로, 더 이상 힙 순서 속성을 위반하지 않는다.
 <br>
 이것으로 삭제 연산이 완료된 것이다.
+<br>
+
+![image](https://user-images.githubusercontent.com/87363461/206839022-a1bf2be5-21bf-4e57-adce-4ee0ffd3ee8f.png)
+
 
 
 ### [예제 코드](https://github.com/JeHeeYu/Algorithm/blob/main/Queue/Priority%20Queue/PriorityQueue.c)
