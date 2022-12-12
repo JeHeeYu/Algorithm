@@ -116,9 +116,6 @@ int Hash(int input, int tableSize)
 <br>
 이만큼 구현이 간단하지만, 충돌이 발생할 가능성이 높아 효율적인 해시 알고리즘은 아니다.
 
-
-
-
 ## 자릿수 접기(Digits Folding) 해시 함수
 프로그래밍을 하다보면, 서로 다른 입력값에 대해 동일한 해시값을 반환할 가능성이 있다.
 <br>
@@ -171,8 +168,11 @@ int Hash(int input, int tableSize)
 
 <br>
 
+### [예제 코드](https://github.com/JeHeeYu/Algorithm/blob/main/Hash%20Table/HashTable_Division.c)
+
+
 ## 충돌 해결 기법
-충돌이란 해시 함수가 서로 다른 입력값에 대해 동일한 해시 테이블 주소를 반환하는 것을 말
+충돌이란 해시 함수가 서로 다른 입력값에 대해 동일한 해시 테이블 주소를 반환하는 것을 말한다.
 <br>
 자릿수 접기 알고리즘을 포함한 모든 해시 함수들은 충돌을 피할 수 없지만, 체이닝 기법을 통해 조취를 취하고 있다.
 
