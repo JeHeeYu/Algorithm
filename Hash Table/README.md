@@ -500,3 +500,40 @@ void Insert(HashTable* table, char* key, char* value);
 void Rehashing(HashTable** table);
 ```
 
+### [예제 코드](https://github.com/JeHeeYu/Algorithm/blob/main/Hash%20Table/HashTable.c)
+
+### 실행 결과
+```
+Key[A] enter at address : [10]
+Key[B] enter at address : [0]
+Key[C] enter at address : [1]
+Key[D] enter at address : [2]
+Key[E] enter at address : [3]
+Key[F] enter at address : [4]
+
+ Rehash. New Table Size is : 22
+
+Key[B] enter at address : [0]
+Key[C] enter at address : [1]
+Key[D] enter at address : [2]
+Key[E] enter at address : [3]
+Key[F] enter at address : [4]
+Key[A] enter at address : [21]
+Key[G] enter at address : [5]
+Key[H] enter at address : [6]
+Key[I] enter at address : [7]
+Key[J] enter at address : [8]
+Key[K] enter at address : [9]
+
+Key : [A], Value : [AAAAAAAA]
+Key : [B], Value : [BBBBBBBB]
+Key : [C], Value : [CCCCCCCC]
+Key : [D], Value : [DDDDDDDD]
+Key : [E], Value : [EEEEEEEE]
+Key : [F], Value : [FFFFFFFF]
+Key : [G], Value : [GGGGGGGG]
+Key : [H], Value : [HHHHHHHH]
+Key : [I], Value : [IIIIIIII]
+Key : [J], Value : [JJJJJJJJ]
+Key : [K], Value : [KKKKKKKK]
+```
