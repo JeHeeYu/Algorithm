@@ -379,7 +379,7 @@ int Hash(int input, int tableSize)
 // 처음 해싱할 함수
 int Hash(int key)
 {
-    return Key % 13;
+    return Key % 13;  // 테이블 사이즈 13
 }
 
 // 충돌 시 사용하는 함수
@@ -400,125 +400,103 @@ int Hash2(int Key)
 이어서 55를 삽입하는데, 55 % 13 = 3 이므로, 이미 사용 중인 주소로 충돌이 발생한다.
 <br>
 
-![캡처](https://user-images.githubusercontent.com/87363461/206986492-29057634-4bdc-463a-8b92-e6e733f7a489.PNG)
+![캡처](https://user-images.githubusercontent.com/87363461/206986972-53708e1d-35a3-46fc-861f-57282d4f0e15.PNG)
 
 <br>
 
 여기서 새로운 주소를 탐사하는데, Hash2() 함수를 이용해서 이동폭을 얻는다.
 <br>
-<br>
 Hash2 함수에 55를 매개 변수로 넘기면 55 % 11 = 0 이므로, +2의 값인 2를 반환한다.
 <br>
+<br>
+55의 새 주소는 원래의 주소(3)에 이동폭(2)을 더한 5가 되므로, 요소 5에 삽입한다.
+<br>
 
+![캡처](https://user-images.githubusercontent.com/87363461/206987272-2673c5d5-f55f-4c59-8ce9-0c9034775e47.PNG)
 
 <br>
 
+다시 81을 삽입하는데, 81 % 13 = 3이므로, 역시 충돌이 일어난다.
+<br>
 
+![캡처](https://user-images.githubusercontent.com/87363461/206987449-f73b5a7f-cbaa-45ea-962f-e2177e79f246.PNG)
 
+<br>
 
-## 체이닝 기반 해시테이블 구조체
-해시 테이블은 키와 밸류 (Key : Value)가 한 쌍인 자료구조로, 키와 밸류를 별도로 관리하여야 한다.
+다시 81을 삽입할 주소를 찾아야 하기 때문에 Hash2() 함수로 이동폭을 계산한다.
+<br>
+81 % 11 = 4, +2를 하면 6으로, 3의 주소에서 6을 더하면 3 + 6 = 9가 된다.
+<br>
+
+![캡처](https://user-images.githubusercontent.com/87363461/206987987-f1d36565-2cdc-4135-98a1-10d60d3c9ab6.PNG)
+
+<br>
+
+이처럼 이중 해싱을 이용하면 1, 2차 클러스터를 효과적으로 방지하여 해시 테이블의 성능 유지를 돕는다.
+<br>
+마지막으로 224를 입력하면, 첫 주소3, 다음 주소 9 다 충돌이 발생한다.
+<br>
+이 경우 다시 Hash2() 반환인 6만큼 이동하여 새 주소 15에 삽입한다.
+<br>
+<br>
+하지만 테이블의 크기가 13이므로, 벗어난 경우 첫 주소부터 다시 시작하여 2의 주소에 삽입한다.
+<br>
+
+![캡처](https://user-images.githubusercontent.com/87363461/206988401-d62c8a87-a382-4e7f-a860-b6d8ceb94b8c.PNG)
+
+<br>
+
+## 재해싱(Rehashing)
+재해싱이란 해시 테이블의 크기를 늘리고, 늘어난 해시 테이블의 크기에 맞춰 테이블 내의 모든 데이터를 다시 해싱한다.
+<br>
+<br>
+선형 탐사, 제곱 탐사, 이중 해시 등 해시 충돌 알고리즘을 적용하더라도 해시 테이블의 여유 공간이 모두 차서 발생하는 성능 저하는 막을 방법이 없다. (이 경우 연쇄 충돌 자주 발생)
+
+<br>
+
+![캡처](https://user-images.githubusercontent.com/87363461/206988734-52a00fa0-bd1a-4f19-b1d2-c47f9e4620f4.PNG)
+
+<br>
+그래서 재해싱 방법은 해시 테이블의 성능을 늘리는 중요한 알고리즘이다.
+<br>
+재해싱을 적용하면 테이블 안에 또다시 여유 공간이 생기므로 연쇄 충돌을 방지할 수 있다.
+
+<br>
+
+![캡처](https://user-images.githubusercontent.com/87363461/206988871-d38e5900-edb2-41d4-a848-0c057f9f5860.PNG)
+
+<br>
+통계적으로 보면 해시 테이블의 공간 사용률이 70% ~ 80%에 이르면 성능 저하가 발생하기 시작한다.
+<br>
+그래서 사용률이 이까지 차기전에 미리 재해싱을 해야 성능 저하를 막을 수 있다.
+<br>
+<br>
+그렇다고 재해싱 임계치를 낮게 잡아 계속 재해싱하면 또 성능 저하를 일으킬 수 있다.
+<br>
+그래서 임계치를 75%로 설정하는 것이 일반적이다.
+
+## 해시 테이블 구현 함수
 ```
-// key와 value 값을 갖고 있는 노드
-typedef struct _Node
-{
-    char* key;
-    char* value;
-    
-    struct _Node* next;
-} Node;
+// 해시 테이블 생성
+HashTable* CreateHashTable(int tableSize);
 
-// 해시 테이블
-typedef struct _HashTable
-{
-    int tableSize;
-    Node** table;
-} HashTable;
-```
+// 해시 테이블 소멸
+void DestroyHashTable(Node* table);
 
-## 탐색 연산
-체이닝 기반의 해시 테이블은 3가지의 순서로 탐색을 진행한다.
+// 노드 클리어
+void ClearNode(Node* node);
 
-<ol>
-<li>찾고자 하는 목표값을 해싱하여 링크드 리스트가 저장된 주소를 찾음</li>
-<li>찾은 주소를 이용해 해시 테이블에 저장된 링크드 리스트에 대한 포인터 생성</li>
-<li>링크드 리스트의 앞에서부터 뒤까지 차례대로 이동하여 목표값이 저장되어 있는지 비교하여 목표값과 링크드 리스트 내 노드값이 일치하면 해당 노드의 주소 반환</li>
-</ol>
+// 이중 해싱
+int Hash(char* key, int keyLength, int tableSize);
+int Hash2(char* key, int keyLength, int tableSize);
 
-```
-char* GetValue(HashTable* table, char* key)
-{
-    // 테이블 주소 해싱
-    int address = Hash(key, strlen(key), table->tableSize);
-    
-    // 해싱 후 주소에 있는 링크드 리스트 가져옴
-    Node* list = table->table[address];
-    Node* target = NULL;
-    
-    if(list == NULL) {
-        return NULL;
-    }
-    
-    // 원하는 값을 찾을 때까지 순차적으로 탐색
-    while(1) {
-        // 값을 찾음
-        if(strcmp(list->key, key) == 0) {
-            target = list;
-            break;
-        }
-        
-        // 다음 노드가 없을 경우
-        if(list->next == NULL) {
-            break;
-        }
-        
-        // 다음 노드 탐색
-        else {
-            list = list->next;
-        }
-    }
-    
-    // 찾은 값 반환
-    return target->value;
-}
-}
-```
+// 주소 내에 데이터 확인
+char* GetValue(HashTable* table, char* key);
 
-## 삽입 연산
-삽입 연산을 위해 먼저 해시 함수를 이용하여 데이터가 삽입될 링크드 리스트의 주소를 얻어야 한다.
-<br>
-그리고 링크드 리스트가 비어 있으면 데이터를 바로 삽입하고, 비어 있지 않을 경우 링크드 리스트의 헤드 앞에 삽입한다.
-<br>
-<br>
-만약 헤드 앞에 삽입하지 않고 테일로 만들려고 한다면, 링크드 리스트를 순차 탐색하여 테일 노드를 찾아 삽입해야 한다.
-<br>
-이 부분에서 이미 같은 주소로 충돌이 일어날 수도 있기 때문에 (충돌이 일어나면 재 순차 탐색) 수행 시간이 길어진다.
-<br>
-그렇기 때문에 테일로 만드는 것보다 헤드 앞에 삽입하는 것이 더 효율적이다.
-<br>
+// 데이터 삽입
+void Insert(HashTable* table, char* key, char* value);
 
-```
-void Insert(HashTable* table, char* key, char* value)
-{
-    // 테이블 주소 해싱
-    int address = Hash(key, strlen(key), table->tableSize);
-    
-    // 삽입할 노드 생성
-    Node* newNode = CreateNode(key, value);
-    
-    // 해당 주소가 비어 있는 경우 바로 삽입
-    if(table->table[address] == NULL) {
-        table->table[address] = newNode;
-    }
-    
-    // 해당 주소가 비어 있지 않은 경우
-    else {
-        Node* temp = table->table[address];
-        newNode->next = temp;
-        table->table[address] = newNode;
-        
-        printf("Key[%s], Addres[%d]\n", key, address);
-    }
-}
+// 재해싱
+void Rehashing(HashTable** table);
 ```
 
