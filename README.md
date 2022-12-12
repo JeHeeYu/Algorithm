@@ -57,8 +57,10 @@
   <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/String/Boyer-Moore" target="_blank">Boyer-Moore</li>
 </ul>
 
+### [해시 테이블](https://github.com/JeHeeYu/Algorithm/tree/main/Hash%20Table)
+
 ## 문제 풀이
 <ul>
   <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Programmers" target="_blank">프로그래머스</li>
-  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/BaekJoon" target="_blank">백준</li>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/%EB%B0%B1%EC%A4%80" target="_blank">백준</li>
 </ul>
