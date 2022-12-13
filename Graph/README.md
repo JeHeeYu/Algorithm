@@ -253,5 +253,5 @@ typedef struct _Graph
 
 <ul>
   <li>vertices : 정점 목록에 대한 포인터</li>
-  <li></li>
+  <li>vertexCount : 정점 수를 나타내는 </li>
 </ul>
