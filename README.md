@@ -20,6 +20,7 @@
 ### [큐](https://github.com/JeHeeYu/Algorithm/tree/main/Queue)
 <ul>
   <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Queue/Priority%20Queue" target="_blank">우선순위 큐(Priority Queue)</li>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Queue/Circular%20Queue" target="_blank">원형 큐(Circular Queue)</li>
 </ul>
 
 ### [트리](https://github.com/JeHeeYu/Algorithm/tree/main/Tree)
