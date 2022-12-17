@@ -87,4 +87,139 @@ typedef struct _CircleQueue
 
 ## 원형 큐 생성
 ```
+void CreateQueue(CircularQueue** queue, int capacity)
+{
+    (*queue) = (CircularQueue*)malloc(sizeof(CircularQueue));
+    
+    // 크기 1만큼 +해서 메모리 생성
+    (*queue)->node = (Node*)malloc(sizeof(Node) * (capacity + 1));
+    
+    (*queue)->capacity = capacity;
+    (*queue)->front = 0;
+    (*queue)->rear = 0;
+}
 ```
+큐 생성 함수로, 원형 큐에 대한 포인터 queue와 용량을 정하는 capacity를 매개 변수로 받는다.
+<br>
+이후 메모리에 동적 할당하여 Node 크기 * (capacity + 1) 만큼 생성한다.
+
+##  원형 큐 소멸
+```
+void DestroyQueue(CircularQueue* queue)
+{
+    // 원형 큐가 가리키는 노드 소멸
+    free(queue->node);
+    
+    // 원형 큐 소멸
+    free(queue);
+}
+```
+소멸은 간단하게 free 함수를 이용하여 원형 큐와 원형 큐가 기리키는 노드 둘 다 소멸시킨다.
+
+## 삽입 연산
+```
+void Enqueue(CircularQueue* queue, int data)
+{
+    // 후단 위치를 가리킬 변수
+    int position = 0;
+    
+    // 후단이 큐 끝에 도달한 경우
+    if(queue->rear == queue->capacity) {
+        position = queue->rear;
+        queue->rear = 0;
+    }
+    // 큐가 가득 차지 않았을 때
+    else {
+        // 현재 위치 1씩 증가
+        position = queue->rear;
+        queue->rear++;
+    }
+    
+    queue->node[position].data = data;
+}
+```
+원형 큐에서 삽입 연산은 후단의 위치를 가리키는 rear 변수를 다루는 것이 핵심이다.
+<br>
+rear의 값이 *queue->capacity + 1과 같은 값이라면, 후단이 큐 끝에 도달(큐가 가득 찬)한 의미로, rear와 position을 0으로 지정한다.
+<br>
+<br>
+그렇지 않을 경우(큐의 메모리가 가득 차지 않은 경우) 현재 rear의 위치를 position에 저장하고 rear의 값을 1 증가시킨다.
+
+<br>
+
+![image](https://user-images.githubusercontent.com/87363461/208222861-9ed59f4d-6d14-4210-b232-817bcf97d86c.png)
+
+<br>
+
+## 제거 연산
+```
+int Dequeue(CircularQueue* queue)
+{
+    // 전단 위치를 가리킬 변수
+    int position = queue->front;
+    
+    // 전단이 큐 끝에 도달한 경우
+    if(queue->front == queue->capacity) {
+        queue->front;
+    }
+    else {
+        queue->front++;   
+    }
+    
+    return queue->node[position].data;
+}
+```
+제거 연산에서는 rear가 아닌 front를 잘 관리하여야 한다.
+<br>
+
+![image](https://user-images.githubusercontent.com/87363461/208223001-2e4f57b7-387b-4fb9-8eef-4881f1c69ba3.png)
+
+<br>
+
+## 공백 상태 확인
+```
+int IsEmpty(CircularQueue* queue)
+{
+    return (queue->front == queue->rear);
+}
+```
+원형 큐가 비어있는지 확인하기 위한 함수로, 간단하게 front와 rear가 값이 같으면 공백 상태이다.
+
+## 포화 상태 확인
+```
+int IsFull(CircularQueue* queue)
+{
+    // 같을 경우 포화 상태
+    if(queue->front < queue->rear) {
+        return (queue->rear - queue->front) == queue->capacity;
+    }
+    // 같을 경우 포화 상태
+    else {
+        return (queue->rear + 1) == queue->front;
+    }
+}
+```
+원형 큐가 포화 상태인지 확인하기 위해 두 가지의 경우의 수를 고려해야 한다.
+
+<ul>
+<li>전단이 후단 앞에 있을 때 후단과 전단의 차(rear - front)가 큐의 용량(capacity)과 동일하면 큐는 포화 상태임</li>
+<li>전단이 후단과 같은 위치 또는 뒤에 있고 후단에 1을 더한 값(rear + 1)이 전단과 동일할 때 포화 상태임</li>
+</ul>
+
+## 원형 큐 사이즈 확인
+```
+int GetSize(CircularQueue* queue)
+{
+    // 후단이 전단보다 뒤에 있을 경우 그냥 빼서 리턴
+    if(queue->front <= queue->rear) {
+        return queue->rear - queue->front;
+    }
+    // 후단이 전단보다 앞에 있을 경우
+    else {
+        queue->rear + (queue->capacity - queue->front) + 1;
+    }
+}
+```
+if의 경우 전단이 후단보다 뒤에 있으니 그냥 - 연산만 하여 값을 리턴하면 되지만, else의 경우는 다르다.
+<br>
+후단이 현재 전단보다 앞에 있으므로, 전체 용량인 capacity에서 front 값을 빼고 rear 에 더하면 된다.
