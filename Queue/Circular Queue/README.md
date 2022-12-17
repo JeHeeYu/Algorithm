@@ -1,3 +1,11 @@
+## 요약
+<ul>
+    <li>원형 큐란 기본(선형) 큐의 특성을 갖고 있으며, 큐에서 전단과 후단이 연결되어 있는 큐 구조임</li>
+    <li>일반 큐의 경우 요소 이동 비용이 크지만, 원형 큐의 경우는 이 문제가 해결됨</li>
+    <li>큐의 후단을 가리키는 변수는 전체 큐 크기의 + 1 </li>
+    <li>전단과 후단의 값이 같을 경우 큐는 포화 상태임</li>
+</ul>
+
 ## 원형 큐(Circular Queue)
 원형 큐란 기본 선형 큐의 FIFO(First-In First-Out) 특성을 갖고 있는 큐에서 전단과 후단이 연결되어 있는 큐 구조를 말한다.
 <br>
@@ -223,3 +231,25 @@ int GetSize(CircularQueue* queue)
 if의 경우 전단이 후단보다 뒤에 있으니 그냥 - 연산만 하여 값을 리턴하면 되지만, else의 경우는 다르다.
 <br>
 후단이 현재 전단보다 앞에 있으므로, 전체 용량인 capacity에서 front 값을 빼고 rear 에 더하면 된다.
+
+
+### [예제 코드](https://github.com/JeHeeYu/Algorithm/blob/main/Queue/Circular%20Queue/CircularQueue.c)
+
+### 실행 결과
+```
+Dequeue : 1 Front : 1 Rear : 4
+Dequeue : 2 Front : 2 Rear : 4
+Dequeue : 3 Front : 3 Rear : 4
+Capacity : 10, Size : 2
+
+Dequeue : 4 Front : 4 Rear : 2
+Dequeue : 100 Front : 5 Rear : 2
+Dequeue : 101 Front : 6 Rear : 2
+Dequeue : 102 Front : 7 Rear : 2
+Dequeue : 103 Front : 8 Rear : 2
+Dequeue : 104 Front : 9 Rear : 2
+Dequeue : 105 Front : 10 Rear : 2
+Dequeue : 106 Front : 0 Rear : 2
+Dequeue : 107 Front : 1 Rear : 2
+Dequeue : 108 Front : 2 Rear : 2
+```
