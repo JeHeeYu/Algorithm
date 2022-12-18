@@ -1,3 +1,10 @@
+## 요약
+<ul>
+<li>링크드 리스틀 이용하여 구현한 큐를 말함</li>
+<li>필요한 큐의 크기를 미리 정하여 사용할 수 있고, 이에 따라 고성능이 요구되는 상황에서 유용</li>
+<li>링크드 큐는 직관적으로 설계 및 구현이 가능한 큐로, 전단과 후단의 주소를 담고 있어야 </li>
+</ul>
+
 ## 링크드 큐(Linked Queue)
 
 링크드 큐는 큐의 특성을 지니고 있는 큐로, 링크드 리스틀 이용하여 큐를 구현한다.
@@ -137,7 +144,7 @@ Node* Dequeue(LinkedQueue* queue)
     // 반환할 최상위 노드
     Node* front = queue->front;
     
-    if(queue->front->nextNode = NULL) {
+    if(queue->front->nextNode == NULL) {
         queue->front = NULL;
         queue->rear = NULL;
     }
@@ -159,4 +166,16 @@ int IsEmpty(LinkedQueue* queue)
 {
     return queue->front == NULL;
 }
+```
+
+
+### [예제 코드](https://github.com/JeHeeYu/Algorithm/blob/main/Queue/Linked%20Queue/LinkedQueue.c)
+
+### 실행 결과
+```
+Queue Size : 4
+Deque : abc
+Deque : def
+Deque : ghi
+Deque : jkl
 ```
