@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 typedef struct _Node
 {
@@ -16,10 +17,13 @@ typedef struct _LinkedQueue
 
 void CreateQueue(LinkedQueue** queue);
 void DestroyQueue(LinkedQueue* queue);
+
 Node* CreateNode(char* newData);
 void DestroyNode(Node* node);
+
 void Enqueue(LinkedQueue* queue, Node* newNode);
 Node* Dequeue(LinkedQueue* queue);
+
 int IsEmpty(LinkedQueue* queue);
 
 int main() 
@@ -114,7 +118,7 @@ Node* Dequeue(LinkedQueue* queue)
     // 반환할 최상위 노드
     Node* front = queue->front;
     
-    if(queue->front->nextNode = NULL) {
+    if(queue->front->nextNode == NULL) {
         queue->front = NULL;
         queue->rear = NULL;
     }
