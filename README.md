@@ -12,7 +12,7 @@
 <ul>
   <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/List/Single%20Linked%20List" target="_blank">링크드 리스트(Linked List)</li>
   <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/List/Double%20Linked%20List" target="_blank">더블 링크드 리스트(Double Linked List)</li>
-  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/List/Circular%20Linked%20List" target="_blank">환형 더블 링크드 리스트(Double Linked List)</li>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/List/Circular%20Linked%20List" target="_blank">환형 더블 링크드 리스트(Circular Double Linked List)</li>
 </ul>
 
 ### [스택](https://github.com/JeHeeYu/Algorithm/tree/main/Stack)
@@ -21,6 +21,7 @@
 <ul>
   <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Queue/Priority%20Queue" target="_blank">우선순위 큐(Priority Queue)</li>
   <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Queue/Circular%20Queue" target="_blank">원형 큐(Circular Queue)</li>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/blob/main/Queue/Linked%20Queue/LinkedQueue.c" target="_blank">링크드 큐(Linked Queue)</li>
 </ul>
 
 ### [트리](https://github.com/JeHeeYu/Algorithm/tree/main/Tree)
