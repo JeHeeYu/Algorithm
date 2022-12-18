@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+  
 typedef struct _Node
 {
     char* data;             // 노드에 담을 데이터
