@@ -83,7 +83,29 @@ DFS와 BFS는 그래프 탐색 기법(그래프의 각 정점을 순회하는 �
 <br>
 
 이 과정이 깊이 우선 탐색(DFS)의 과정이며, 코드로 나타내면 아래 코드와 같다.
-
+```
+void DFS(Vertex* v)
+{
+    Edge* e = NULL;
+    
+    printf("%d ", v->data);
+    
+    // '방문' 표시
+    v->visited = Visited;
+    
+    e = v->adjacencyList;
+    
+    // 현재 정점의 모든 인접 정점에 대해 재귀 호출
+    while(e != NULL) {
+        // 방문하지 않은 정점의 경우 탐색
+        if(e->target != NULL && e->target->visited == NotVisited) {
+            DFS(e->target);
+        }
+        
+        e = e->next;
+    }
+}
+```
 
 
 ## 너비 우선 탐색(Breadth First Search)
@@ -186,28 +208,48 @@ DFS와 BFS는 그래프 탐색 기법(그래프의 각 정점을 순회하는 �
 <br>
 <br>
 이 과정을 코드로 구현하면 아래 코드와 같다.
+```
+void BFS(Vertex* v, LinkedQueue* queue)
+{
+    Edge* e = NULL;
+    
+    printf("%d ", v->data);
+    v->visited = Visited;
+    
+    // 시작 정점을 큐에 삽입
+    Enqueue(queue, CreateNode(v));
+    
+    // 큐가 비지 않았을 경우
+    while(!IsEmpty(queue)) {
+        // 큐에서 전단 제거
+        Node* temp = Dequeue(queue);
+        v = temp->data;
+        e = v->adjacencyList;
+        
+        // 큐에서 꺼낸 정점의 인접 정점 조사
+        while(e != NULL) {
+            v = e->target;
+            
+            // 방문하지 않은 접점들 방문
+            if(v != NULL && v->visited == NotVisited) {
+                printf("%d ", v->data);
+                v->visited = Visited;
+                Enqueue(queue, CreateNode(v));
+            }
+            
+            e = e->next;
+        }
+    }
+}
+```
 
+### [예제 코드](https://github.com/JeHeeYu/Algorithm/blob/main/Graph/DFS%20BFS/DFS_BFS)
+예제 코드로, 링크드 큐를 이용해서 구현한 예제이다.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### 실행 결괴
+```
+Enter Mode : (0 : DFS, 1 : BFS) 0
+1 2 4 5 7 3 6 
+Enter Mode : (0 : DFS, 1 : BFS) 1
+1 2 3 4 5 6 7 
+```
