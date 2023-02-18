@@ -243,3 +243,18 @@ B의 인접 정점인 C 정점과 E 정점이 있는데 C 정점은 이미 방�
 <br>
 
 이것으로 DFS를 이용한 위상 정렬이 완성되었다.
+
+### [예제 코드](https://github.com/JeHeeYu/Algorithm/blob/main/Graph/Topological%20Sort/Topological_DFS.c)
+
+### 실행 결과
+```
+H
+F
+C
+G
+D
+A
+E
+B
+Toplogical Sort Result : B E A D G C F H
+```
