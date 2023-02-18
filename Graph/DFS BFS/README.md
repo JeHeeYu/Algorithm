@@ -246,7 +246,7 @@ void BFS(Vertex* v, LinkedQueue* queue)
 ### [예제 코드](https://github.com/JeHeeYu/Algorithm/blob/main/Graph/DFS%20BFS/DFS_BFS)
 예제 코드로, 링크드 큐를 이용해서 구현한 예제이다.
 
-### 실행 결괴
+### 실행 결과
 ```
 Enter Mode : (0 : DFS, 1 : BFS) 0
 1 2 4 5 7 3 6 
