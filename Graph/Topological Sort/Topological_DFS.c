@@ -1,5 +1,5 @@
-// Online C compiler to run C program online
 #include <stdio.h>
+#include <stdlib.h>
 
 // 정점 방문 여부로 방문 : 0, 미방문 : 1
 enum 
@@ -45,7 +45,7 @@ typedef struct _Node
 Graph* createGraph();
 
 // 그래프 제거
-DestroyGraph(Graph* g);
+void DestroyGraph(Graph* g);
 
 // 정점 추가
 Vertex* CreateVertex(int data);
@@ -65,10 +65,6 @@ void DestroyEdge(Edge* e);
 // 간선 추가
 void AddEdge(Vertex* v, Edge* e);
 
-// 그래프 출력
-void PrintGraph(Graph* g);
-
-
 // 노드 생성
 Node* CreateNode(Vertex* newData);
 
@@ -87,79 +83,185 @@ void InsertHead(Node** head, Node* newHead);
 // 노드 삭제
 void RemoveNode(Node** head, Node* remove);
 
-// 노드 확인
-Node* GetNode(Node* head, int location);
-
-// 노드 개수 확인
-int GetNodeCount(Node* head);
-
 // 위상 정렬
 void TopologicalSort(Vertex* v, Node** list);
 
 // DFS를 이용한 위상 정렬
 void DFS(Vertex* v, Node** list);
 
-int main() {
-    // Write C code here
-    printf("Hello world");
-
+int main() 
+{
+    Node* sortedList = NULL;
+    Node* currentNode = NULL;
+    
+    // 그래프 생성
+    Graph* graph = createGraph();
+    
+    // 정점 생성
+    Vertex* a = CreateVertex('A');
+    Vertex* b = CreateVertex('B');
+    Vertex* c = CreateVertex('C');
+    Vertex* d = CreateVertex('D');
+    Vertex* e = CreateVertex('E');
+    Vertex* f = CreateVertex('F');
+    Vertex* g = CreateVertex('G');
+    Vertex* h = CreateVertex('H');
+    
+    // 그래프에 정점 추가
+    AddVertex(graph, a);
+    AddVertex(graph, b);
+    AddVertex(graph, c);
+    AddVertex(graph, d);
+    AddVertex(graph, e);
+    AddVertex(graph, f);
+    AddVertex(graph, g);
+    AddVertex(graph, h);
+    
+    // 정점과 정점을 간선으로 잇기
+    AddEdge(a, CreateEdge(a, c, 0));
+    AddEdge(a, CreateEdge(a, d, 0));
+    
+    AddEdge(b, CreateEdge(b, c, 0));
+    AddEdge(b, CreateEdge(b, e, 0));
+    
+    AddEdge(c, CreateEdge(c, f, 0));
+    
+    AddEdge(d, CreateEdge(d, f, 0));
+    AddEdge(d, CreateEdge(d, g, 0));
+    
+    AddEdge(e, CreateEdge(e, g, 0));
+    
+    AddEdge(f, CreateEdge(f, h, 0));
+    
+    AddEdge(g, CreateEdge(g, h, 0));
+    
+    // 위상 정렬
+    TopologicalSort(graph->vertices, &sortedList);
+    
+    printf("Toplogical Sort Result : ");
+    currentNode = sortedList;
+    
+    while(currentNode != NULL) {
+        printf("%C ", currentNode->data->data);
+        currentNode = currentNode->nextNode;
+    }
+    
+    printf("\n");
+    
+    // 그래프 소멸
+    DestroyGraph(graph);
+    
     return 0;
 }
 
 // 그래프 생성
 Graph* createGraph()
 {
+        // 그래프 동적 메모리 할당
+    Graph* graph = (Graph*)malloc(sizeof(Graph));
+    graph->vertices = NULL;
+    graph->vertexCount = 0;
     
+    return graph;
 }
 
 // 그래프 제거
-DestroyGraph(Graph* g)
+void DestroyGraph(Graph* g)
 {
+    // 다음 정점이 데이터가 있을 경우 반복해서 해제
+    while(g->vertices != NULL) {
+        Vertex* vertices = g->vertices->next;
+        DestroyVertex(g->vertices);
+        g->vertices = vertices;
+    }
     
+    free(g);
 }
 
 // 정점 추가
 Vertex* CreateVertex(int data)
 {
+    // 새로운 정점 생성
+    Vertex* v = (Vertex*)malloc(sizeof(Vertex));
     
+    v->data = data;
+    v->next = NULL;
+    v->adjacencyList = NULL;
+    v->visited = NOTVISITED;
+    v->index = -1;
+    
+    return v;
 }
 
 // 정점 제거
 void DestroyVertex(Vertex* v)
 {
+    // 인접한 정점이 데이터가 있을 경우 반복해서 해제
+    while(v->adjacencyList != NULL) {
+        Edge* edge = v->adjacencyList->next;
+        DestroyEdge(v->adjacencyList);
+        v->adjacencyList = edge;
+    }
     
+    free(v);
 }
 
 // 정점 추가
 void AddVertex(Graph* g, Vertex* v)
 {
+    Vertex* vertexList = g->vertices;
     
+    if(vertexList == NULL) {
+        g->vertices = v;
+    }
+    
+    else {
+        while(vertexList->next != NULL) {
+            vertexList = vertexList->next;
+        }
+        
+        vertexList->next = v;
+    }
+    
+    v->index = g->vertexCount++;
 }
 
 // 간선 추가
 Edge* CreateEdge(Vertex* from, Vertex* target, int weight)
 {
+    // 새로운 간선 생성
+    Edge* e = (Edge*)malloc(sizeof(Edge));
     
+    e->from = from;
+    e->target = target;
+    e->weight = weight;
+    
+    return e;
 }
 
 // 간선 제거
 void DestroyEdge(Edge* e)
 {
-    
+    free(e);
 }
 
 // 간선 추가
 void AddEdge(Vertex* v, Edge* e)
 {
+    if(v->adjacencyList == NULL) {
+        v->adjacencyList = e;
+    }
     
+    else {
+        Edge* adjacencyList = v->adjacencyList;
+        
+        while(adjacencyList->next != NULL) {
+            adjacencyList = adjacencyList->next;
+        }
+        
+        adjacencyList->next = e;
+    }
 }
-
-// 그래프 출력
-void PrintGraph(Graph* g)
-{
-    
-}
-
 
 // 노드 생성
 Node* CreateNode(Vertex* newData)
@@ -247,26 +349,34 @@ void RemoveNode(Node** head, Node* remove)
     }
 }
 
-// 노드 확인
-Node* GetNode(Node* head, int location)
-{
-    
-}
-
-// 노드 개수 확인
-int GetNodeCount(Node* head)
-{
-    
-}
-
 // 위상 정렬
 void TopologicalSort(Vertex* v, Node** list)
 {
-    
+    while(v != NULL && v->visited == NOTVISITED) {
+        DFS(v, list);
+        v = v->next;
+    }
 }
 
 // DFS를 이용한 위상 정렬
 void DFS(Vertex* v, Node** list)
 {
+    Node* newHead = NULL;
+    Edge* e = NULL;
     
+    v->visited = VISITED;
+    e = v->adjacencyList;
+    
+    while(e != NULL) {
+        if(e->target != NULL && e->target->visited == NOTVISITED) {
+            DFS(e->target, list);
+        }
+        
+        e = e->next;
+    }
+    
+    printf("%c\n", v->data);
+    
+    newHead = CreateNode(v);
+    InsertHead(list, newHead);
 }
