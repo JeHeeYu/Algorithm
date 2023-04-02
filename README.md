@@ -5,7 +5,8 @@
 ### [수학](https://github.com/JeHeeYu/Algorithm/tree/main/Math)
 <ul>
   <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Math/%EC%A7%84%EB%B2%95%20%EB%B3%80%ED%99%98" target="_blank">진법 변환</li>
-  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Math/Prime%20Number" target="_blank">소수 (Prime Number)</li>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Math/Prime%20Number" target="_blank">소수(Prime Number)</li>
+  <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Math/%EA%B5%AC%EA%B0%84%20%ED%95%A9" target="_blank">구간 합(Prefix Sum)</li>
 </ul>
 
 ### [리스트](https://github.com/JeHeeYu/Algorithm/tree/main/List)
