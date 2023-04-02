@@ -76,3 +76,7 @@ S[5] = A[0] + A[1] + A[2] + A[3] + A[4] + A[5]
 S[1] = A[0] + A[1]
 S[5] - S[1] = A[2] + A[3] + A[4] + A[5]
 ```
+
+### [예제 문제](https://www.acmicpc.net/problem/11659)
+
+### [예제 코드](https://github.com/JeHeeYu/Algorithm/blob/main/Math/%EA%B5%AC%EA%B0%84%20%ED%95%A9/PrefixSum.cpp)
