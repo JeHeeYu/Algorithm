@@ -66,6 +66,7 @@
 <ul>
   <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Graph/DFS%20BFS" target="_blank">DFS(Depth First Search)와 BFS(Breadth First Search)</li>
   <li><a href="https://github.com/JeHeeYu/Algorithm/blob/main/Graph/Topological%20Sort" target="_blank">위상 정렬(Topological Sort)</li>
+    <li><a href="https://github.com/JeHeeYu/Algorithm/tree/main/Graph/Minimum%20Spanning%20Tree" target="_blank">최소 신장 트리(Minimum Spanning Tree)</li>
 </ul>
 
 ## 문제 풀이
