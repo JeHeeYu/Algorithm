@@ -159,5 +159,16 @@ E에 인접 정점 H가 있기는 하지만 경로  B-F-E-H의 비용이 330이�
 
 ### [예제 코드](https://github.com/JeHeeYu/Algorithm/blob/main/Graph/Dijkstra%20Algorithm/Dijkstra.c)
 
+### 실행 결과
 
-
+```
+A : 
+B : A[35] C[126] F[150] 
+C : D[243] 
+D : 
+E : 
+F : E[232] G[304] H[270] 
+G : I[410] 
+H : 
+I :
+```
