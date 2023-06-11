@@ -70,6 +70,7 @@
 </ul>
 
 ### [동적 계획법(DP, Dynamic Programming)](https://github.com/JeHeeYu/Algorithm/tree/main/Dynamic%20Programming)
+- [최장 공통 부분 수열(LCS, Longest Common Subsequence)](https://github.com/JeHeeYu/Algorithm/tree/main/Dynamic%20Programming/%EC%B5%9C%EC%9E%A5%20%EA%B3%B5%ED%86%B5%20%EB%B6%80%EB%B6%84%20%EC%88%98%EC%97%B4(LCS,%20Longest%20Common%20Subsequence))
 
 ## 문제 풀이
 <ul>
