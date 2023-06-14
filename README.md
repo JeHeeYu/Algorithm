@@ -75,6 +75,7 @@
 ### [분할 정복(Divide and Conquer)](https://github.com/JeHeeYu/Algorithm/tree/main/Divide%20and%20Conquer)
 
 ### [탐욕(Greedy)](https://github.com/JeHeeYu/Algorithm/tree/main/Greedy)
+- [허프만 코딩(Huffman Coding)](https://github.com/JeHeeYu/Algorithm/tree/main/Greedy/Huffman)
 
 ## 문제 풀이
 <ul>
