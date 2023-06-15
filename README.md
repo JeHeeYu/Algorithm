@@ -78,6 +78,7 @@
 - [허프만 코딩(Huffman Coding)](https://github.com/JeHeeYu/Algorithm/tree/main/Greedy/Huffman)
 
 ### [백트래킹(Backtracking)](https://github.com/JeHeeYu/Algorithm/tree/main/Backtracking)
+- [8 퀸(Queen) 문제](https://github.com/JeHeeYu/Algorithm/tree/main/Backtracking/8%20Queen)
 
 ## 문제 풀이
 <ul>
